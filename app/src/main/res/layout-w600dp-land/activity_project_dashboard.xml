@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/new_project"
+    tools:context=".ProjectDashboard"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Project Name"
+        android:gravity="center"
+        android:textSize="38sp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <RelativeLayout
+        android:id="@+id/deltaRelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/circlepink">
+
+                </View>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Image below"
+                    android:layout_margin="16dp"
+                    android:textColor="@color/black">
+
+                </TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/round_recycler_bc">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/list_item">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_toRightOf="@id/layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/addImages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add More Images"
+                android:layout_gravity="end"
+                android:layout_margin="16dp"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginBottom="60dp"
+                    android:layout_marginRight="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    tools:ignore="MissingConstraints">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/dots_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:dotsColor="@color/gray"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:dotsSpacing="4dp"
+                    app:layout_constraintTop_toBottomOf="@id/cardView"
+                    app:dotsWidthFactor="2.5"
+                    app:selectedDotColor="@color/pink"
+                    app:progressMode="true"
+                    />
+
+
+                <Button
+                    android:id="@+id/nextBT"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:text="Next"
+                    android:textColor="@color/white"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/pinkround_bt"
+                    android:layout_marginRight="30dp"
+                    tools:ignore="MissingConstraints">
+
+                </Button>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/loadingbc"
+        android:gravity="center">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:progress="@integer/material_motion_duration_medium_1"
+                android:progressTint="@color/black"
+                >
+
+            </ProgressBar>
+<!--        <com.tuyenmonkey.mkloader.MKLoader-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:mk_type="Sharingan"-->
+<!--        app:mk_color="@color/black"-->
+<!--        />-->
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
