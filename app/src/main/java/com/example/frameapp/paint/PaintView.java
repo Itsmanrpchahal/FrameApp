@@ -1,4 +1,4 @@
-package debtechllc.deb.talez.paint;
+package com.example.frameapp.paint;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,11 +12,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-import org.jetbrains.annotations.NotNull;
+import com.example.frameapp.EditProjectScreen;
 
 import java.util.ArrayList;
-import debtechllc.deb.talez.Fragment.StoryMakingFrg;
-import debtechllc.deb.talez.R;
 
 public class PaintView extends View implements UndoCommand {
 
@@ -62,7 +60,6 @@ public class PaintView extends View implements UndoCommand {
 
     private int mStackedSize = 50;
     ImageView imageView;
-
     public PaintView(Context context) {
         this(context, null);
     }
@@ -83,7 +80,6 @@ public class PaintView extends View implements UndoCommand {
         UndoStack = new paintPadUndoStack(this, mStackedSize);
 
         mPaintType = PaintConstants.PEN_TYPE.PLAIN_PEN;
-
         mCurrentShapeType = PaintConstants.SHAP.CURV;
         creatNewPen();
     }
@@ -99,7 +95,7 @@ public class PaintView extends View implements UndoCommand {
     @Override
     public  boolean onTouchEvent(MotionEvent event) {
         motionEvent = event;
-        StoryMakingFrg.Companion.getGetDrawPathID_IF().getDrawPath(motionEvent);
+//        StoryMakingFrg.Companion.getGetDrawPathID_IF().getDrawPath(motionEvent);
 
         float x = event.getX();
         float y = event.getY();
@@ -114,7 +110,7 @@ public class PaintView extends View implements UndoCommand {
                 Log.d("touchDown",""+x+"   "+y);
                 UndoStack.clearRedo();
                 Log.d("undoSize",""+mUndoStack.size());
-                StoryMakingFrg.Companion.getGetUndoRedoSizeIF().getUndoRedoSize(mUndoStack.size(),mOldActionStack.size());
+                EditProjectScreen.Companion.getGetUndoRedoSizeIF().getUndoRedoSize(mUndoStack.size(),mOldActionStack.size());
                 mCallBack.onTouchDown();
                 invalidate();
                 break;

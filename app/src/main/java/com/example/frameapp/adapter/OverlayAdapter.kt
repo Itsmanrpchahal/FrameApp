@@ -15,7 +15,7 @@ import com.example.frameapp.R
 import com.example.frameapp.models.OverlayModel
 
 class OverlayAdapter(var context: Context,var overlayList : OverlayModel):RecyclerView.Adapter<OverlayAdapter.ViewHolder>() {
-    private var selectedPosition = -1
+    private var selectedPosition = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OverlayAdapter.ViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -25,6 +25,7 @@ class OverlayAdapter(var context: Context,var overlayList : OverlayModel):Recycl
 
     @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: OverlayAdapter.ViewHolder, position: Int) {
+
 
         if (selectedPosition==position)
         {

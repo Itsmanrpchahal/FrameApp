@@ -1,4 +1,4 @@
-package debtechllc.deb.talez.paint;
+package com.example.frameapp.paint;
 
 import android.graphics.Paint;
 

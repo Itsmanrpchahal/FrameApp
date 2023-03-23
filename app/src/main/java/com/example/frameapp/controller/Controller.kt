@@ -6,7 +6,6 @@ import com.example.frameapp.models.SignInModel
 import com.example.frameapp.models.ToolsModel
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit.Retrofit
 import retrofit2.Call
 
 class Controller {

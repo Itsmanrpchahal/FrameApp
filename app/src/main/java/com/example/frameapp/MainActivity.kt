@@ -36,7 +36,7 @@ class MainActivity : BaseClass() ,Controller.SignInAPI{
         pd.show()
         pd.setContentView(R.layout.loading)
 
-        controller.setSignIn("manpreet@gpcoders.com","Admin@12345")
+        controller.setSignIn("manpreet@gpcoders.com","Admin@1234")
         findIds()
         listeners()
     }

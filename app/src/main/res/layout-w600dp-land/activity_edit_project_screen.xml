@@ -7,8 +7,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/new_project"
+    android:id="@+id/parentLayout"
     tools:context=".EditProjectScreen"
     tools:ignore="MissingDefaultResource">
+
 
     <RelativeLayout
         android:id="@+id/deltaRelative"
@@ -16,6 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="20dp">
+
 
         <LinearLayout
             android:id="@+id/linear"
@@ -168,19 +171,49 @@
                     app:cardBackgroundColor="@color/white"
                     tools:ignore="MissingConstraints">
 
-                    <ImageView
-                        android:id="@+id/image"
+                    <RelativeLayout
+                        android:id="@+id/relDrawData"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/group_1">
+                        android:visibility="visible"
+                        android:layout_above="@+id/llBottomContainer">
 
-                    </ImageView>
+                        <RelativeLayout
+                            android:id="@+id/touch_outside"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <com.example.frameapp.paint.EllipseClass
+                            android:id="@+id/ellipse"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="@color/fulltransparent">
+
+                        </com.example.frameapp.paint.EllipseClass>
+
+                        <com.example.frameapp.paint.PaintView
+                            android:id="@+id/mPaintView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            android:backgroundTint="@color/fulltransparent">
+
+                        </com.example.frameapp.paint.PaintView>
+
+                        <ImageView
+                            android:id="@+id/ivOldScreenshot"
+                            android:layout_width="150dp"
+                            android:layout_height="120dp" />
+
+                    </RelativeLayout>
+
 
                 </androidx.cardview.widget.CardView>
 
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -189,31 +222,65 @@
                     android:layout_gravity="center"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/newProject_bt"
-                        android:layout_width="120dp"
-                        android:layout_height="35dp"
-                        android:text="Change Project"
-                        android:textSize="10sp"
-                        android:textStyle="bold"
-                        android:background="@drawable/whiteround_bt"
-                        >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                    </Button>
+                        <ImageView
+                            android:id="@+id/undo_iv"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toStartOf="@+id/back"
+                            android:src="@drawable/undograyicon" />
 
-                    <Button
-                        android:id="@+id/openProject_bt"
-                        android:layout_width="120dp"
-                        android:layout_height="35dp"
-                        android:text="Save and Close"
-                        android:textColor="@color/white"
-                        android:textSize="10sp"
-                        android:layout_marginLeft="12dp"
-                        android:textStyle="bold"
-                        android:background="@drawable/pinkround_bt"
-                        >
+                        <ImageView
+                            android:id="@+id/redo_iv"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toStartOf="@+id/back"
+                            android:src="@drawable/redograyicon" />
 
-                    </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/newProject_bt"
+                            android:layout_width="120dp"
+                            android:layout_height="35dp"
+                            android:text="Change Project"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/whiteround_bt"
+                            >
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/openProject_bt"
+                            android:layout_width="120dp"
+                            android:layout_height="35dp"
+                            android:text="Save and Close"
+                            android:textColor="@color/white"
+                            android:textSize="10sp"
+                            android:layout_marginLeft="12dp"
+                            android:textStyle="bold"
+                            android:background="@drawable/pinkround_bt"
+                            >
+
+                        </Button>
+                    </LinearLayout>
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

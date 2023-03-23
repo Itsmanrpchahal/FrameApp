@@ -1,6 +1,6 @@
 package com.example.frameapp.models
 
-class ToolsModel : ArrayList<ToolsModelItem>(){
+class ToolsModel : ArrayList<ToolsModel.ToolsModelItem>(){
     data class ToolsModelItem(
         val created_by: Int,
         val description: Any,
@@ -19,6 +19,7 @@ class ToolsModel : ArrayList<ToolsModelItem>(){
             val img: Any,
             val overlay_id: Int,
             val shapeImage: String,
+            val shapeImageType : String,
             val thickness: Int,
             val thicknessType: String,
             val title: String,
